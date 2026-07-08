@@ -42,7 +42,7 @@ export default function CheckoutFlowStage({
   return (
     <Link
       href={href}
-      className={`block w-72 rounded-2xl border p-6 shadow-sm transition-transform duration-200 hover:-translate-y-1 ${colorClass}`}
+      className={`block w-full max-w-full rounded-2xl border p-6 shadow-sm transition-transform duration-200 hover:-translate-y-1 ${colorClass}`}
     >
       <p className="text-xs font-semibold uppercase tracking-[0.2em] opacity-80">
         {stage}

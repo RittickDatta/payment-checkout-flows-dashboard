@@ -98,11 +98,11 @@ export default function Funnel() {
         </h2>
       </div>
 
-      <div className="flex flex-wrap items-center justify-between gap-4 overflow-x-auto">
+      <div className="flex flex-col gap-4 overflow-x-hidden md:flex-row md:flex-wrap md:items-center md:justify-between">
         {stageStats.map((item, index) => (
           <div
             key={item.stage}
-            className="flex flex-col items-center"
+            className="flex w-full flex-col items-stretch md:w-full"
           >
             <CheckoutFlowStage
               stage={item.stage}
@@ -115,7 +115,7 @@ export default function Funnel() {
             />
 
             {index < stageStats.length - 1 && (
-              <div className="mt-3 text-2xl font-bold text-slate-400">↓</div>
+              <div className="mt-3 text-2xl font-bold text-slate-400 flex justify-center">↓</div>
             )}
           </div>
         ))}
