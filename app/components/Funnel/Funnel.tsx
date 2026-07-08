@@ -102,33 +102,20 @@ export default function Funnel() {
         {stageStats.map((item, index) => (
           <div
             key={item.stage}
-            className="flex items-center gap-4"
+            className="flex flex-col items-center"
           >
-            <div className="flex flex-col items-center gap-2">
-              <CheckoutFlowStage
-                stage={item.stage}
-                colorClass={item.colorClass}
-                href={item.href}
-              />
-              <p className="text-sm text-slate-600">
-                {item.reachedCount.toLocaleString()} sessions
-                <span className="ml-2 text-slate-400">
-                  ({item.percentOfOriginal.toFixed(0)}% of total)
-                </span>
-              </p>
-            </div>
+            <CheckoutFlowStage
+              stage={item.stage}
+              colorClass={item.colorClass}
+              href={item.href}
+              reachedCount={item.reachedCount}
+              percentOfOriginal={item.percentOfOriginal}
+              dropOffCount={dropOffs[index]?.dropOffCount ?? 0}
+              dropOffRate={dropOffs[index]?.dropOffRate ?? 0}
+            />
 
             {index < stageStats.length - 1 && (
-              <div className="flex min-w-[160px] flex-col items-center rounded-3xl border border-slate-200 bg-slate-50 px-4 py-3 text-center text-sm text-slate-700 shadow-sm">
-                <span className="font-semibold text-slate-900">
-                  {dropOffs[index].dropOffCount.toLocaleString()} dropped off
-                </span>
-                <span className="text-slate-500">
-                  {dropOffs[index].dropOffRate.toFixed(1)}% drop from previous
-                  stage
-                </span>
-                <div className="mt-2 text-2xl font-bold text-slate-400">↓</div>
-              </div>
+              <div className="mt-3 text-2xl font-bold text-slate-400">↓</div>
             )}
           </div>
         ))}
