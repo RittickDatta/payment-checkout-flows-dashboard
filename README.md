@@ -1,7 +1,7 @@
 # payment-checkout-flows-dashboard
 
 ## Live Website Link
-https://payment-checkout-flows-dashboard-3anirfa2k.vercel.app/
+https://payment-checkout-flows-dashboard.vercel.app/
 
 ## Overview
 
